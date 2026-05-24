@@ -1,0 +1,34 @@
+```python
+# Simple Exploratory Data Analysis (EDA) Code
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load dataset
+df = pd.read_csv("data.csv")
+
+# Show first rows
+print(df.head())
+
+# Dataset info
+print(df.info())
+
+# Missing values
+print(df.isnull().sum())
+
+# Statistical summary
+print(df.describe())
+
+# Correlation heatmap
+sns.heatmap(df.corr(numeric_only=True), annot=True, cmap="coolwarm")
+plt.show()
+
+# Histogram
+df.hist(figsize=(10,8))
+plt.show()
+
+# Boxplot
+sns.boxplot(data=df)
+plt.show()
+```
